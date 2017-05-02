@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>Royal Sports</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="header">
+        @{Html.RenderAction("Summary", "Cart"); }
+        <div class="title">Royal Sports</div>
+        </div>
+    <div class="row-panel">
+        <div id="categories">
+            @{ Html.RenderAction("Menu", "Nav");}
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Royal Sports LTD</p>
+    </footer>
+    </div>
+</body>
+</html>

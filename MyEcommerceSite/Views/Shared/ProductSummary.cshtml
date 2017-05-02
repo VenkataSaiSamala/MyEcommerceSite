@@ -1,0 +1,14 @@
+﻿@model MyEcommerce.Domain.Entities.Product
+
+<div class="item">
+    <h3>@Model.Name</h3>
+    @Model.Description
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        @Html.HiddenFor(x => x.ProductID)
+        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+        <input type="submit" value=" + AddToCart" />
+    }
+    <h4>@Model.Price.ToString("c")</h4>
+</div>
